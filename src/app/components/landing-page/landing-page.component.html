@@ -8,11 +8,22 @@
         placeholder="Enter your name to become a trainer"
         (keyup.enter)="onLogin(username)"
         [formControl]="username"
-        required
-        minlength="3"
-        maxlength="20"/>
+        required/>
     <span (click)="onLogin(username)">
         <img width="15px" src="../../../assets/images/LoginButton.png" alt="login button"/>
     </span>
 </div>
 
+<div 
+    *ngIf="username.invalid && (username.dirty || username.touched)"
+    class="alert">
+        <div *ngIf="username.errors.required">
+            Name is required.
+        </div>
+        <div *ngIf="username.errors.minlength">
+            Name must be at least 3 characters long.
+        </div>
+        <div *ngIf="username.errors.maxlength">
+            Name must be maximum 20 characters long.
+        </div>
+</div>

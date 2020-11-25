@@ -8,6 +8,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { TrainerPageComponent } from './components/trainer-page/trainer-page.component';
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemonDescriptionComponent } from './components/pokemon-description/pokemon-description.component';
+import { NotFoundPageComponent } from './error-handling/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PokemonDescriptionComponent } from './components/pokemon-description/po
     LandingPageComponent,
     TrainerPageComponent,
     PokemonsComponent,
-    PokemonDescriptionComponent
+    PokemonDescriptionComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

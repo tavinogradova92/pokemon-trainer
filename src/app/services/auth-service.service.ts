@@ -12,10 +12,8 @@ export class AuthServiceService {
 
   public storeOnLocalStorage(username: FormControl): void {
 
-    let approvedUsername = JSON.stringify(username.value);
-
-    if (approvedUsername.length >= 3) {
-      localStorage.setItem('username', approvedUsername);
+    if (username.value.length >= 3) {
+      localStorage.setItem('username', JSON.stringify(username.value));
       this.isLogedIn = true;
     }
   }

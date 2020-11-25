@@ -1,0 +1,18 @@
+<h1>Pokemon Trainer</h1>>
+
+<p>Choose and train pokemons and become a really cool trainer.</p>
+
+<div class="loginForm">
+    <input 
+        type="text"
+        placeholder="Enter your name to become a trainer"
+        (keyup.enter)="onLogin(username)"
+        [formControl]="username"
+        required
+        minlength="3"
+        maxlength="20"/>
+    <span (click)="onLogin(username)">
+        <img width="15px" src="../../../assets/images/LoginButton.png" alt="login button"/>
+    </span>
+</div>
+

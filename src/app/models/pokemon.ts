@@ -1,4 +1,6 @@
 import { Sprites } from './sprites';
+import { Types } from './types';
+import { Stats } from './stats';
 
 export interface Pokemon {
     id?: number;
@@ -6,11 +8,8 @@ export interface Pokemon {
     name: string;
     image?: string;
     sprites?: Sprites;
-    abilities?: any[];
-    stats?: any[];
+    types?: Types[];
+    stats?: Stats[];
     height?: number;
     weight?: number;
-    types?: any[];
-    base_experience?: number;
-    moves?: any[];
 }

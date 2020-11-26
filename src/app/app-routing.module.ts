@@ -6,6 +6,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { TrainerPageComponent } from './components/trainer-page/trainer-page.component';
 import { NotFoundPageComponent } from './error-handling/not-found-page/not-found-page.component';
+import { PokemonDescriptionComponent } from './components/pokemon-description/pokemon-description.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: 'pokemons',
     component: PokemonsComponent,
+    canActivate: [ AuthGuard ]
+  },
+  {
+    path: 'pokemons/:id',
+    component: PokemonDescriptionComponent,
     canActivate: [ AuthGuard ]
   },
   {

@@ -36,7 +36,7 @@ export class PokemonAPIService {
       image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${ id }.png`};
   }
 
-  public fetchPokemon(id: number): Observable<Pokemon> {
+  public fetchPokemon(id: any): Observable<Pokemon> {
     return this.http.get<Pokemon>(`${this.apiUrl}/${id}`)
       .pipe(
         tap(_ => this.log(`fetched pokemon id=${id}`)),

@@ -10,6 +10,7 @@ import { Pokemon } from '../../models/pokemon';
 export class PokemonsComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
+  p: number = 1;  
 
   constructor(private pokemonService : PokemonAPIService) { }
 

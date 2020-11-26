@@ -1,4 +1,10 @@
-<div class="pokemonCard" *ngFor="let pokemon of pokemons">
+<h2>Pokemon Catalogue</h2>
+<div class="container">
+  <div class="pokemonCard" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: p }">
     <p>{{ pokemon.name }}</p>
     <img [src]="pokemon.image" [alt]="pokemon.name"/>
+    <button>Details</button>
   </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+

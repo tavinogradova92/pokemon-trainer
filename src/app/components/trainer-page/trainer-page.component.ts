@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonCollectorService } from '../../services/pokemon-collector.service';
 
 @Component({
   selector: 'app-trainer-page',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerPageComponent implements OnInit {
 
-  public trainerName = JSON.parse(localStorage.getItem('username'));
+  pokemonCollection: [] = [];
 
-  constructor() { }
+  public trainerName = JSON.parse(localStorage.getItem('username')); 
+
+  constructor(private pokemonCollectorService : PokemonCollectorService) { }
 
   ngOnInit(): void {
+    this.pokemonCollection = JSON.parse(localStorage.getItem('collectedPokemons'));
   }
 
 }

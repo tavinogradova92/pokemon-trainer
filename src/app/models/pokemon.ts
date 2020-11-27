@@ -5,7 +5,7 @@ import { Abilities } from './abilities';
 import { Moves } from './moves';
 
 export interface Pokemon {
-    id?: number;
+    id: number;
     url: string;
     name: string;
     image?: string;

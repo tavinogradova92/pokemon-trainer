@@ -11,6 +11,7 @@ import { TrainerPageComponent } from './components/trainer-page/trainer-page.com
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemonDescriptionComponent } from './components/pokemon-description/pokemon-description.component';
 import { NotFoundPageComponent } from './error-handling/not-found-page/not-found-page.component';
+import { CollectButtonComponent } from './utils/collect-button/collect-button.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundPageComponent } from './error-handling/not-found-page/not-found
     TrainerPageComponent,
     PokemonsComponent,
     PokemonDescriptionComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    CollectButtonComponent
   ],
   imports: [
     BrowserModule,

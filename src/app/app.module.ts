@@ -12,6 +12,7 @@ import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemonDescriptionComponent } from './components/pokemon-description/pokemon-description.component';
 import { NotFoundPageComponent } from './error-handling/not-found-page/not-found-page.component';
 import { CollectButtonComponent } from './utils/collect-button/collect-button.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CollectButtonComponent } from './utils/collect-button/collect-button.co
     PokemonsComponent,
     PokemonDescriptionComponent,
     NotFoundPageComponent,
-    CollectButtonComponent
+    CollectButtonComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

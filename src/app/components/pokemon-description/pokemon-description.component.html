@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <div *ngIf="pokemon">
     <h2>{{ pokemon.name.substring(0,1).toUpperCase()+pokemon.name.substring(1) }}</h2>
     <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name"/>

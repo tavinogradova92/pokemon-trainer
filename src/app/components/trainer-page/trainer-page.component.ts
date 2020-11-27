@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerPageComponent implements OnInit {
 
+  public trainerName = JSON.parse(localStorage.getItem('username'));
+
   constructor() { }
 
   ngOnInit(): void {

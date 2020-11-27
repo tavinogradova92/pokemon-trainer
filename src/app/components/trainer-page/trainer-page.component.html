@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<div class="dashbpoard">
+<div class="dashboard">
 
     <h1>Trainer Page</h1>
     
@@ -19,5 +19,7 @@
             <img [src]="myPokemon.sprites.front_default" [alt]="myPokemon.name"/>
         </a>
     </ng-template>
+
+    <button (click)="logout()">Log Out</button>
 
 </div>

@@ -4,7 +4,7 @@
     class="pokemonCard" 
     *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: p }"
     routerLink="/pokemons/{{pokemon.id}}">
-      <h4>{{ pokemon.name }}</h4>
+      <h4>{{ pokemon.name.substring(0,1).toUpperCase()+pokemon.name.substring(1) }}</h4>
       <img [src]="pokemon.image" [alt]="pokemon.name"/>
   </a>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>

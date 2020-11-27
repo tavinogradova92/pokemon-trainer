@@ -1,3 +1,6 @@
 export interface Moves {
-    move: Object;
+    move: {
+        name: string,
+        url: string
+    };
 }

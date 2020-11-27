@@ -1,3 +1,6 @@
 export interface Types {
-    type: Object;
+    type: {
+        name: string,
+        url: string
+    };
 }

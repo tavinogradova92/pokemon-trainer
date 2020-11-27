@@ -1,3 +1,6 @@
 export interface Stats {
-    stat: Object;
+    stat: {
+        name: string,
+        url: string
+    };
 }

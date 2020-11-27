@@ -1,8 +1,18 @@
-<h2>Trainer Page</h2>
+<div class="dashbpoard">
 
-<h3> Hello, {{ trainerName }}!</h3>
 
-<div class="dashboard">
+<h1>Trainer Page</h1>
+
+
+
+<div *ngIf="pokemonCollection == null; else elseBlock">
+    <p> Hello, {{ trainerName }}! You don't have any pokemons now. Go to Pokemon Catalogue to find dream pokemons.</p>
+    <a routerLink="/pokemons">Catalogue</a>
+</div>
+
+<ng-template #elseBlock>
+    <h2> Hello, {{ trainerName }}!</h2>
+    <h3>Collected Pokemons</h3>
     <a 
       class="collectedPokemonCard" 
       *ngFor="let myPokemon of pokemonCollection"
@@ -10,4 +20,8 @@
         <h4>{{ myPokemon.name.substring(0,1).toUpperCase()+myPokemon.name.substring(1) }}</h4>
         <img [src]="myPokemon.sprites.front_default" [alt]="myPokemon.name"/>
     </a>
-  </div>
+</ng-template>
+
+
+    
+</div>

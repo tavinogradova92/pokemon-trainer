@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pokemon } from '../models/pokemon';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,14 @@ export class PokemonCollectorService {
 
   public collectedPokemons: [] = [];
 
-  public collectPokemon(id: number): void {
+  public collectPokemon(pokemon: Pokemon): void {
     if (this.collectedPokemons == []) {
       this.collectedPokemons.push(JSON.parse(localStorage.getItem('collectedPokemons')));
       localStorage.setItem('collectedPokemons', JSON.stringify(this.collectedPokemons));
       this.router.navigateByUrl('/dashboard');
     } else {
       this.collectedPokemons = JSON.parse(localStorage.getItem('collectedPokemons')) || [];
-      this.collectedPokemons.push(id);
+      this.collectedPokemons.push(pokemon);
       localStorage.setItem('collectedPokemons', JSON.stringify(this.collectedPokemons));
       this.router.navigateByUrl('/dashboard');
     }

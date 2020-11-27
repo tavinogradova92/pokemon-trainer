@@ -16,8 +16,8 @@ export class CollectButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  collect(id: number) {
-    this.pokemonCollectorService.collectPokemon(id);
+  collect(pokemon: Pokemon) {
+    this.pokemonCollectorService.collectPokemon(pokemon);
   }
 
 }

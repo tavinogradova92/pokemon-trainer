@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonAPIService } from '../../services/pokemon-api.service';
-import { PokemonCollectorService } from '../../services/pokemon-collector.service';
 import { Pokemon } from '../../models/pokemon';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -17,7 +16,6 @@ export class PokemonDescriptionComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private pokemonService: PokemonAPIService,
-    private pokemonCollectorService: PokemonCollectorService,
     private location: Location,
   ) { }
 
@@ -29,10 +27,6 @@ export class PokemonDescriptionComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.pokemonService.fetchPokemon(id)
       .subscribe(data => this.pokemon = data);
-  }
-
-  collect(id: number) {
-    this.pokemonCollectorService.collectPokemon(id);
   }
 
   goBack(): void {

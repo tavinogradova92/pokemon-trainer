@@ -16,7 +16,7 @@ export class PokemonDescriptionComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private pokemonService: PokemonAPIService,
-    private location: Location
+    private location: Location,
   ) { }
 
   ngOnInit(): void {
@@ -28,8 +28,6 @@ export class PokemonDescriptionComponent implements OnInit {
     this.pokemonService.fetchPokemon(id)
       .subscribe(data => this.pokemon = data);
   }
-
-  
 
   goBack(): void {
     this.location.back();

@@ -16,7 +16,17 @@
     <h4>Profile</h4>
     <div>Height: <span>{{ pokemon.height }}</span></div>
     <div>Weight: <span>{{ pokemon.weight }}</span></div>
-    
+    <br/>
+    <div>Abilities:
+        <div *ngFor="let ability of pokemon.abilities">
+            {{ ability.ability.name }}
+        </div>
+    </div>
+    <div>Base experience: <span>{{ pokemon.base_experience }}</span></div>
+    <h4>Examples of moves</h4>
+    <div *ngFor="let move of pokemon.moves | slice:0:5">
+        {{ move.move.name }}
+    </div>
 </div>
 
 <button (click)="goBack()">go back</button>

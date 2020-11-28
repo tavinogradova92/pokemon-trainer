@@ -1,29 +1,40 @@
-<h1>Pokemon Trainer</h1>>
+<header class="vh-100 dt w-100 yellow-background">
+    <div class="dtc v-mid tc blue ph3 ph4-l">
+        <h1 class="f6 f2-m f-subheadline-l fw6 tc">Pokemon Trainer</h1>
 
-<p>Choose and train pokemons and become a really cool trainer.</p>
+        <img src="../../../assets/images/pokemon.png" width="40%" alt="pokemon logo"/>
 
-<div class="loginForm">
-    <input 
-        type="text"
-        placeholder="Enter your name to become a trainer"
-        (keyup.enter)="onLogin(username)"
-        [formControl]="username"
-        required/>
-    <span (click)="onLogin(username)">
-        <img width="15px" src="../../../assets/images/LoginButton.png" alt="login button"/>
-    </span>
-</div>
+        <p class="f5 f4-m f3-l fw2 black-90 mt0 lh-copy">Choose and train pokemons and become a really cool trainer.</p>
 
-<div 
-    *ngIf="username.invalid && (username.dirty || username.touched)"
-    class="alert">
-        <div *ngIf="username.errors?.required">
-            Name is required.
+        <div class="input-field">
+            <input 
+                class="ba pa2 w-50 input-field-text"
+                type="text"
+                placeholder="Enter your name to become a trainer"
+                (keyup.enter)="onLogin(username)"
+                [formControl]="username"
+                required/>
+            <div class="login-button" (click)="onLogin(username)">
+                <img 
+                class="login-button-image" 
+                src="../../../assets/images/LoginButton.png" 
+                alt="login button"/>
+            </div>
+            
         </div>
-        <div *ngIf="username.errors?.minlength">
-            Name must be at least 3 characters long.
+
+        <div 
+            *ngIf="username.invalid && (username.dirty || username.touched)"
+            class="alert">
+                <div *ngIf="username.errors?.required">
+                    Name is required.
+                </div>
+                <div *ngIf="username.errors?.minlength">
+                    Name must be at least 3 characters long.
+                </div>
+                <div *ngIf="username.errors?.maxlength">
+                    Name must be maximum 20 characters long.
+                </div>
         </div>
-        <div *ngIf="username.errors?.maxlength">
-            Name must be maximum 20 characters long.
-        </div>
-</div>
+    </div>
+</header>

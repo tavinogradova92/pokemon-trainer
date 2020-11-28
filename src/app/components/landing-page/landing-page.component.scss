@@ -1,0 +1,22 @@
+.yellow-background {
+    background-color:rgb(255, 255, 0);
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+}
+
+.login-button {
+    height: 7vh;
+}
+
+.login-button-image {
+    height: 6vh;
+}
+
+.login-button:hover {
+    cursor: pointer;
+}

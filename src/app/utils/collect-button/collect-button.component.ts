@@ -16,8 +16,20 @@ export class CollectButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  collect(pokemon: Pokemon) {
+  collect(pokemon: Pokemon): void {
     this.pokemonCollectorService.collectPokemon(pokemon);
+  }
+
+  checkIfCollected(): boolean {
+    let collectedPokemons = JSON.parse(localStorage.getItem('collectedPokemons'));
+    if (collectedPokemons) {
+      for (let i = 0; i < collectedPokemons.length; i++) {
+        if (this.pokemon.id == collectedPokemons[i].id) {
+          return true;
+        } 
+      }
+    }
+    return false;
   }
 
 }

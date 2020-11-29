@@ -1,13 +1,18 @@
 <app-nav-bar></app-nav-bar>
-<h2>Pokemon Catalogue</h2>
-<div class="container">
-  <a 
-    class="pokemonCard" 
-    *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: p }"
-    routerLink="/pokemons/{{pokemon.id}}">
-      <h4>{{ pokemon.name.substring(0,1).toUpperCase()+pokemon.name.substring(1) }}</h4>
-      <img [src]="pokemon.image" [alt]="pokemon.name"/>
-  </a>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+<h2 class="f3 f2-m f1-l pl4">Pokemon Catalogue</h2>
+<div class="cf pa2">
+  <div 
+    class="fl w-50 w-25-m w-20-l pa2"
+    *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: p }">
+    <a 
+      class="db link dim tc" 
+      routerLink="/pokemons/{{pokemon.id}}">
+        <h4>{{ pokemon.name.substring(0,1).toUpperCase()+pokemon.name.substring(1) }}</h4>
+        <img [src]="pokemon.image" [alt]="pokemon.name"/>
+    </a>
+  </div>
 </div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
 

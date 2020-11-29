@@ -25,14 +25,14 @@
 
         <div 
             *ngIf="username.invalid && (username.dirty || username.touched)"
-            class="alert">
-                <div *ngIf="username.errors?.required">
+            class="alert-container">
+                <div class="alert" *ngIf="username.errors?.required">
                     Name is required.
                 </div>
-                <div *ngIf="username.errors?.minlength">
+                <div class="alert" *ngIf="username.errors?.minlength">
                     Name must be at least 3 characters long.
                 </div>
-                <div *ngIf="username.errors?.maxlength">
+                <div class="alert" *ngIf="username.errors?.maxlength">
                     Name must be maximum 20 characters long.
                 </div>
         </div>

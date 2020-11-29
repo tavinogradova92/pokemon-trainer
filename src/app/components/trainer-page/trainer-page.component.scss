@@ -1,0 +1,15 @@
+.dashboard {
+    height: 80vh;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+}
+
+.logout-button-container {
+    display: flex;
+    width: 80%;
+    margin-top: 10vh;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

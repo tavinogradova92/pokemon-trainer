@@ -1,25 +1,41 @@
 <app-nav-bar></app-nav-bar>
-<div class="dashboard">
+<div class="dashboard pa3 pa5-ns">
 
-    <h1>Trainer Page</h1>
+    <h1 class="f3 f2-m f1-l">Trainer Page</h1>
     
     <div *ngIf="pokemonCollection == null; else elseBlock">
         <p> Hello, {{ trainerName }}! You don't have any pokemons now. Go to Pokemon Catalogue to find dream pokemons.</p>
-        <a routerLink="/pokemons">Catalogue</a>
+        <a class="f8 grow no-underline br-pill ph4 pv3 mb2 dib black bg-yellow" routerLink="/pokemons">Catalogue</a>
     </div>
     
     <ng-template #elseBlock>
         <h2> Hello, {{ trainerName }}!</h2>
-        <h3>Here are your collected pokemons</h3>
-        <a 
-          class="collectedPokemonCard" 
-          *ngFor="let myPokemon of pokemonCollection"
-          routerLink="/pokemons/{{myPokemon.id}}">
-            <h4>{{ myPokemon.name.substring(0,1).toUpperCase()+myPokemon.name.substring(1) }}</h4>
-            <img [src]="myPokemon.sprites.front_default" [alt]="myPokemon.name"/>
-        </a>
+        <p>Here are your collected pokemons</p>
+        <div class="cf pa2">
+            <div 
+                class="fl w-50 w-25-m w-20-l pa2"
+                *ngFor="let myPokemon of pokemonCollection">
+                    <a 
+                        class="db link dim tc" 
+                        routerLink="/pokemons/{{myPokemon.id}}">
+                    <h4>{{ myPokemon.name.substring(0,1).toUpperCase()+myPokemon.name.substring(1) }}</h4>
+                    <img 
+                        [src]="myPokemon.sprites.front_default" 
+                        [alt]="myPokemon.name" 
+                        class="center db outline black-10"/>
+                    </a>
+            </div>
+            
+        </div>
     </ng-template>
 
-    <button (click)="logout()">Log Out</button>
+    <div class="logout-button-container">
+        <button 
+            (click)="logout()"
+            class="logout-button f6 grow no-underline br-pill ba ph3 pv2 mb2 dib black">
+                Log Out
+        </button>
+    </div>
+    
 
 </div>

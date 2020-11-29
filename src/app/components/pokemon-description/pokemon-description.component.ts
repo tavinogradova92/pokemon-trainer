@@ -11,13 +11,13 @@ import { Location } from '@angular/common';
 })
 export class PokemonDescriptionComponent implements OnInit {
 
-  pokemon: Pokemon;
+  pokemon: Pokemon = {name: '', url: '', sprites: {front_default: ''}};
 
   constructor(
     private route: ActivatedRoute,
     private pokemonService: PokemonAPIService,
-    private location: Location,
-  ) { }
+    private location: Location
+  ) {  }
 
   ngOnInit(): void {
     this.fetchPokemon();

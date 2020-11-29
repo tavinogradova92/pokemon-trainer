@@ -10,9 +10,9 @@ import { PokemonCollectorService } from '../../services/pokemon-collector.servic
 })
 export class TrainerPageComponent implements OnInit {
 
-  pokemonCollection: [] = [];
+  pokemonCollection: {id: number, name: string, sprites: {front_default: string}}[] = [];
 
-  public trainerName = JSON.parse(localStorage.getItem('username')); 
+  public trainerName = JSON.parse(localStorage.getItem('username') as string); 
 
   constructor(
     private router: Router,
@@ -21,7 +21,7 @@ export class TrainerPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.pokemonCollection = JSON.parse(localStorage.getItem('collectedPokemons'));
+    this.pokemonCollection = JSON.parse(localStorage.getItem('collectedPokemons') as string);
   }
 
   logout(): void {

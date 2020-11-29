@@ -2,7 +2,7 @@
 <div *ngIf="pokemon" class="tc pa3 pa5-ns">
     <div class="hide-child relative ba b--black-20 mw5 center">
         <h2>{{ pokemon.name.substring(0,1).toUpperCase()+pokemon.name.substring(1) }}</h2>
-        <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name"/>
+        <img [src]="pokemon.sprites?.front_default" [alt]="pokemon.name"/>
         <div class="pa2 bt b--black-20">
             <h3>Base Stats</h3>
             <div><h4>Types</h4>

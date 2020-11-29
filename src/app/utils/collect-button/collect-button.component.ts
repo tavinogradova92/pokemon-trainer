@@ -9,7 +9,7 @@ import { PokemonCollectorService } from '../../services/pokemon-collector.servic
 })
 export class CollectButtonComponent implements OnInit {
 
-  @Input() pokemon: Pokemon;
+  @Input() pokemon: Pokemon = {name: '', url: '', sprites: {front_default: ''}};
 
   constructor(private pokemonCollectorService: PokemonCollectorService) { }
 
@@ -21,7 +21,7 @@ export class CollectButtonComponent implements OnInit {
   }
 
   checkIfCollected(): boolean {
-    let collectedPokemons = JSON.parse(localStorage.getItem('collectedPokemons'));
+    let collectedPokemons = JSON.parse(localStorage.getItem('collectedPokemons') as string);
     if (collectedPokemons) {
       for (let i = 0; i < collectedPokemons.length; i++) {
         if (this.pokemon.id == collectedPokemons[i].id) {

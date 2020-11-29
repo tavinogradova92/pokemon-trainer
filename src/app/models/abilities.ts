@@ -1,3 +1,6 @@
 export interface Abilities {
-    ability: Object;
+    ability: {
+        name: string,
+        url: string
+    };
 }

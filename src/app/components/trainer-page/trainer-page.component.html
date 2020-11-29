@@ -1,11 +1,11 @@
 <app-nav-bar></app-nav-bar>
-<div class="dashboard pa3 pa5-ns">
+<div class="dashboard pa2 pa5-ns">
 
     <h1 class="f3 f2-m f1-l">Trainer Page</h1>
     
     <div *ngIf="pokemonCollection == null; else elseBlock">
         <p> Hello, {{ trainerName }}! You don't have any pokemons now. Go to Pokemon Catalogue to find dream pokemons.</p>
-        <a class="f8 grow no-underline br-pill ph4 pv3 mb2 dib black bg-yellow" routerLink="/pokemons">Catalogue</a>
+        <a class="catalogue-link f8 grow no-underline br-pill ph4 pv3 mb2 dib black bg-yellow" routerLink="/pokemons">Catalogue</a>
     </div>
     
     <ng-template #elseBlock>
